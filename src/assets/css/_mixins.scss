@@ -1,0 +1,25 @@
+/*MARGIN & PADDINGS MIXINS*/
+@mixin paddings($top: 0, $left: 0, $bottom: $top, $right: $left) {
+    padding: $top $left $bottom $right;
+}
+@mixin margins($top: 0, $left: 0, $bottom: $top, $right: $left) {
+    margin: $top $left $bottom $right;
+}
+/*FONT & TEXT MIXINS*/
+@mixin fontData($size: $size, $color: $color, $align: "center", $ifAlign: false) {
+    font-size: $size;
+    color: $color;
+    @if $ifAlign {
+        text-align: $align;
+    }
+}
+@mixin justifyContent($type: "center", $if: false) {
+    justify-content: center;
+    @if $if {
+        justify-content: center !important;
+    }
+}
+/*BACKGROUNDS MIXINS*/
+@mixin backgroundColors($color: rgba(255, 255, 255, 1)) {
+    background-color: $color;
+}
