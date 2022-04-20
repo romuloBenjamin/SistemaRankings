@@ -1,3 +1,49 @@
+@import "../variaveis";
+//Modulo Rankings
 .rankings-main{
-    border: 1px solid red;
+    //Titulo Container Rankings
+    h1{
+        color: rgba(0,0,0,1);
+    }
+    //Container Rankings
+    .container-rankings{
+        width: 100%;
+        border: 1px solid green;
+        .formulario-rankings{
+            width: inherit;
+        }
+    }
+
+}
+//View Rankings
+.viewRankings{
+    width: 100%;
+    ul{
+        width: inherit;
+        li:nth-child(0) {
+            border: 2px solid rgb(240, 149, 74);   
+        }
+        li:nth-child(1) {
+            border: 2px solid rgb(231, 109, 72);            
+        }
+        li{
+            border-radius: 25%;
+            box-shadow: 0 3px 10px -3px rgba(0,0,0,.8);
+        }
+    }
+}
+//Row Identificação
+.rowDadosIdentificacao{
+    display: grid;
+    grid-template-areas: "a b c d";
+    grid-template-columns: 18% 18% 30% 34%;
+    //Celulas Grid
+    div{
+        padding: {
+            top: auto;
+            bottom: auto;
+            left: .8rem;
+            right: .8rem;
+        };
+    }
 }

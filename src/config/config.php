@@ -15,7 +15,6 @@ class Config
 
     public function set_directories($params)
     {
-        //$project = "tabela-fornecedores-abaixo-estoque-seguranca";
         $project = "module-rankings";
         $xplodes = explode($project, $params)[1];
         ($xplodes == "") ? $this->dirs->path = "./src/" : $this->dirs->path = "../../";
