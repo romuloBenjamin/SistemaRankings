@@ -53,4 +53,24 @@ html {
   padding-left: .8rem;
   padding-right: .8rem;
 }
+
+.rowNotaEntrega, .rowNotaCliente {
+  width: 100%;
+}
+
+.rowNotaEntrega div, .rowNotaCliente div {
+  width: inherit;
+}
+
+.linhaNotaEntrega, .linhaNotaCliente {
+  width: inherit;
+}
+
+.linhaNotaEntrega small, .linhaNotaCliente small {
+  width: auto;
+}
+
+.linhaNotaEntrega input, .linhaNotaCliente input {
+  width: auto;
+}
 /*# sourceMappingURL=ranking.css.map */

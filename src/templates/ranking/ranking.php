@@ -38,20 +38,21 @@
                 <!-- Nota Retorno de Entregas -->
                 <div class="rowNotaEntrega">
                     <div class="d-grid justify-content-between">
-                        <div class="input-group">
-                            <small class="input-group-text">Nota da Entrega:</small>
+                        <div class="linhaNotaEntrega">
+                            <small>Nota da Entrega:</small>
                             <input type="number" name="pontuacaoEntrega" id="pontuacaoEntrega" class="form-control" value="">
                         </div>
                     </div>
                 </div>
+                <hr>
                 <!-- Nota Retorno de Entregas -->
                 
                 <!-- Nota Serviço Entrega (Cliente) -->
                 <div class="rowNotaCliente">
                     <div class="d-grid justify-content-between">
                         <button><i class="fa-solid fa-circle-plus"></i> Cadastrar nota do cliente</button>
-                        <div class="d-none input-group">
-                            <small class="input-group-text">Nota do Cliente:</small>
+                        <div class="d-none linhaNotaCliente">
+                            <small>Nota do Cliente:</small>
                             <input type="number" name="pontuacaoCliente" id="pontuacaoCliente" class="form-control">
                         </div>
                     </div>

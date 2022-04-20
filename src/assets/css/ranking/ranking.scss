@@ -47,3 +47,19 @@
         };
     }
 }
+//Linha nota Entrega & Cliente
+.rowNotaEntrega, .rowNotaCliente{
+    width: 100%;
+    div{
+        width: inherit;
+    }
+}
+.linhaNotaEntrega, .linhaNotaCliente{
+    width: inherit;
+    small{
+        width: auto;
+    }
+    input{
+        width: auto;
+    }
+}
