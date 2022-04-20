@@ -37,15 +37,25 @@
                 
                 <!-- Nota Retorno de Entregas -->
                 <div class="rowNotaEntrega">
-                    <div class="d-grid input-group justify-content-between">
-                        <small class="input-group-text">Nota Entrega:</small>
-                        <input type="number" name="pontuacaoEntrega" id="pontuacaoEntrega" class="form-control" value="">
+                    <div class="d-grid justify-content-between">
+                        <div class="input-group">
+                            <small class="input-group-text">Nota da Entrega:</small>
+                            <input type="number" name="pontuacaoEntrega" id="pontuacaoEntrega" class="form-control" value="">
+                        </div>
                     </div>
                 </div>
                 <!-- Nota Retorno de Entregas -->
                 
                 <!-- Nota Serviço Entrega (Cliente) -->
-                <div></div>
+                <div class="rowNotaCliente">
+                    <div class="d-grid justify-content-between">
+                        <button><i class="fa-solid fa-circle-plus"></i> Cadastrar nota do cliente</button>
+                        <div class="d-none input-group">
+                            <small class="input-group-text">Nota do Cliente:</small>
+                            <input type="number" name="pontuacaoCliente" id="pontuacaoCliente" class="form-control">
+                        </div>
+                    </div>
+                </div>
                 <!-- Nota Serviço Entrega (Cliente) -->
             </div>
             <!-- Inner Container Formulario Rankings-->
