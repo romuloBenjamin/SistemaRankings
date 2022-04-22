@@ -5,6 +5,7 @@ html {
 }
 
 .rankings-main h1 {
+  padding: 0 .8rem;
   color: black;
 }
 
@@ -22,19 +23,50 @@ html {
 }
 
 .viewRankings ul {
-  width: inherit;
-}
-
-.viewRankings ul li:nth-child(0) {
-  border: 2px solid #f0954a;
+  width: auto;
+  margin-left: auto;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .viewRankings ul li:nth-child(1) {
-  border: 2px solid #e76d48;
+  border: 2px solid #f0954a !important;
+}
+
+.viewRankings ul li:nth-child(1)::after {
+  content: url(../../images/svg/truck-fontawesome.svg);
+  position: absolute;
+  width: 2rem;
+  margin-top: +.3rem;
+  margin-left: -.18rem;
+  height: 2rem;
+  z-index: -1;
+}
+
+.viewRankings ul li:nth-child(2) {
+  border: 2px solid #b3aeac !important;
+}
+
+.viewRankings ul li:nth-child(2)::after {
+  content: url(../../images/svg/user-fontawesome.svg);
+  position: absolute;
+  width: 1.5rem;
+  margin-top: .2rem;
+  margin-left: .25rem;
+  height: 1.5rem;
+  z-index: -1;
 }
 
 .viewRankings ul li {
-  border-radius: 25%;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  margin: 0 .8rem;
+  border-radius: 45% !important;
   -webkit-box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.8);
           box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.8);
 }
@@ -45,6 +77,30 @@ html {
       grid-template-areas: "a b c d";
   -ms-grid-columns: 18% 18% 30% 34%;
       grid-template-columns: 18% 18% 30% 34%;
+}
+
+.rowDadosIdentificacao div:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+
+.rowDadosIdentificacao div:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b;
+}
+
+.rowDadosIdentificacao div:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c;
+}
+
+.rowDadosIdentificacao div:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: d;
 }
 
 .rowDadosIdentificacao div {
@@ -60,6 +116,8 @@ html {
 
 .rowNotaEntrega div, .rowNotaCliente div {
   width: inherit;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .linhaNotaEntrega, .linhaNotaCliente {
@@ -72,5 +130,11 @@ html {
 
 .linhaNotaEntrega input, .linhaNotaCliente input {
   width: auto;
+}
+
+#addNotaCliente {
+  border-bottom: 1px solid black;
+  border-radius: 0px !important;
+  width: 15rem;
 }
 /*# sourceMappingURL=ranking.css.map */
