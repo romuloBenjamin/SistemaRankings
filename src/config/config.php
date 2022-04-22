@@ -17,7 +17,7 @@ class Config
     {
         $project = "module-rankings";
         $xplodes = explode($project, $params)[1];
-        ($xplodes == "") ? $this->dirs->path = "./src/" : $this->dirs->path = "../../";
+        ($xplodes == "") ? $this->dirs->path = "./src/" : $this->dirs->path = "../../../";
         $this->dirs->project = $project;
         return $this->dirs;
     }
