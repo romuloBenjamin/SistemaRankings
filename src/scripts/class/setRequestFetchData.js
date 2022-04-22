@@ -1,13 +1,18 @@
 export class SetRequestToFetchData {
     responser;
+    postData;
+    method;
     entry;
     mode;
     url;
-    constructor(params1 = undefined) {
+    constructor(params1 = undefined, params2 = "GET") {
         if(params1 === undefined || params1 === null) this.destruct()
         this.entry = params1
         this.url = params1.url
-        //Modes => dev ou prod
+        //Methods => GET & POST
+        this.method = params2
+        this.postData = null
+        //Modes => dev & prod
         this.mode = 'dev'
         this.responser = {}
     }
@@ -16,9 +21,24 @@ export class SetRequestToFetchData {
         this.entry = undefined
         return;
     }
+
     //Set Request
     setRequest() {
         return new Request(this.url)
+    }
+
+    //Get Formdata
+    
+    //Get Data to Post Resquet || Get Data Samples
+    getPullMethod() {
+        const pullMethod = {}
+        //Add Method GET & POST
+        pullMethod.method = this.method
+        //Add Body to Send
+        if(this.method === "POST") {
+            pullMethod.body = JSON.stringify(this.entry)
+        }
+        return pullMethod
     }
 
     //Get dados to Status 3
@@ -35,17 +55,23 @@ export class SetRequestToFetchData {
         const response = null;
         const dados = {}
         try {
-            const ifetch = await fetch(request)
+            //Set Pull Method
+            var pullMethod = this.getPullMethod()
+            //Set Fetch Data
+            const ifetch = await fetch(request, pullMethod)            
             //Get Dados From Core in Modes Dev & Prod and Set dados data
             if(this.mode === 'dev') dados.dados = await ifetch.text()
-            if(this.mode === 'prod') dados.dados = await ifetch.json()
+            if(this.mode === 'prod') dados.dados = await ifetch.json()            
             dados.status = 1
-            dados.text = "Dados obtidos com Sucesso!"            
+            dados.text = "Dados obtidos com Sucesso!"
+            //If Null Result Change Status to 3
             if(dados.dados === "" || dados.dados === null) this.getDados_status3(dados)
+            //Send Back responser Content
             this.responser = dados
         } catch (error) {
             dados.status = 0
             dados.text = "Desculpe, ocorreu um problema ao obter dados!"
+            //Send Back responser Content (Error)
             this.responser = dados
         }
         return;

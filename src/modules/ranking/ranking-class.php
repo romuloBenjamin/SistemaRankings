@@ -5,10 +5,12 @@ class Ranking
     var $mode;
     var $entry;
 
-    public function __construct()
+    public function __construct($params1 = null)
     {
         //Mode Operation of this class: dev & prod
         $this->mode = 'dev';
+        //Get Entry Data
+        if($params1 != null) $this->entry = $params1;
         //Build Variables
         $this->build = array();
     }

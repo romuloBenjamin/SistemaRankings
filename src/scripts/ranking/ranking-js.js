@@ -95,9 +95,9 @@ const ViewNotaCliente = () => {
 //To Rankings
 const toRanking = async () => {
     dados.url = "./src/scripts/ranking/core/ranking-core.php"
-    var query = new GetRequest(dados);
+    var query = new GetRequest(dados, "POST");
     var execute = await query.init()
-    console.log(execute);
+    console.log(execute?.dados);
 }
 
 //Get Dados To Ranking
