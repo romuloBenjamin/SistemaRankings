@@ -66,4 +66,7 @@
     <!-- Container Formulario Rankings -->
 </div>
 <!-- Container Rankings -->
+<!-- Overlay Modal Message -->
+<div id="overLayMessage" class="d-none overLayMessage"></div>
+<!-- Overlay Modal Message -->
 <script type="module" src="./src/scripts/ranking/ranking-js.js"></script>

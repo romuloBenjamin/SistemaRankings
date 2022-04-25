@@ -13,7 +13,7 @@ export class SetRequestToFetchData {
         this.method = params2
         this.postData = null
         //Modes => dev & prod
-        this.mode = 'dev'
+        this.mode = 'prod'
         this.responser = {}
     }
 
@@ -27,8 +27,6 @@ export class SetRequestToFetchData {
         return new Request(this.url)
     }
 
-    //Get Formdata
-    
     //Get Data to Post Resquet || Get Data Samples
     getPullMethod() {
         const pullMethod = {}
@@ -83,6 +81,7 @@ export class SetRequestToFetchData {
         let request = this.setRequest()
         //Get Fetch
         await this.getDados(request)
+        //View Dados Retornados
         return this.visualizar()
     }
 

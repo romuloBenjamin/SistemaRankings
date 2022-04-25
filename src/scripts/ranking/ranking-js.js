@@ -14,6 +14,7 @@ let inputRomaneio = document.getElementById("nRomaneio")
 let buttonAddNotaCliente = document.getElementById("addNotaCliente")
 
 //Get Elements to display Score
+let imputMotoristaNome = document.getElementById("nomeMotorista")
 let viewScoreEntrega = document.getElementById("scoreEntrega")
 let viewScoreCliente = document.getElementById("scoreCliente")
 let viewMediaScore = document.getElementById("scoreMedia")
@@ -92,12 +93,25 @@ const ViewNotaCliente = () => {
     buttonAddNotaCliente.classList.toggle("d-none")  
 }
 
+//View Modal Message
+const pushModalMessage = (message) => {
+    let modalOverLay = document.getElementById("overLayMessage")
+    if(message?.status === 0) modalOverLay.classList.toggle("d-none");
+}
+
 //To Rankings
 const toRanking = async () => {
+    //URL to Fetch Request of data
     dados.url = "./src/scripts/ranking/core/ranking-core.php"
+    //Fetch data from Url
     var query = new GetRequest(dados, "POST");
     var execute = await query.init()
-    console.log(execute?.dados);
+    //Execute In Status (1) => Sucesso!
+    if(execute?.status === 1) imputMotoristaNome.value = execute.dados.motorista[1]
+    //Execute In Status (0) => ERROS
+    if(execute?.status === 0) pushModalMessage(execute)
+    //Execute In Status (3) => NULOS
+    if(execute?.status === 3) pushModalMessage(execute)
 }
 
 //Get Dados To Ranking

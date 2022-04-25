@@ -11,7 +11,7 @@ class Ranking
     public function __construct($params1 = null)
     {
         //Mode Operation of this class: dev & prod
-        $this->mode = 'dev';
+        $this->mode = 'prod';
         //Get Entry Data
         if($params1 != null) $this->entry = $params1;
         //SQL Datas
@@ -131,6 +131,6 @@ class Ranking
     public function visualizar()
     {
         if($this->mode == 'dev') echo json_encode($this);
-        if($this->mode == 'prod') var_dump($this);
+        if($this->mode == 'prod') echo json_encode($this->loops);
     }
 }
