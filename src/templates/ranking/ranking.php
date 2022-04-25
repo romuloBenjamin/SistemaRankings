@@ -19,7 +19,7 @@
                     </div>
                     <div class="input-group">
                         <small class="input-group-text">Nome do Motorista:</small>
-                        <input type="text" class="form-control" name="nomeMotorista" id="nomeMotorista" placeholder="Motorista deste Romaneio">
+                        <input type="text" class="form-control" name="nomeMotorista" id="nomeMotorista" disabled placeholder="Motorista deste Romaneio">
                     </div>
                     <!-- View Rankings -->
                     <div class="viewRankings">

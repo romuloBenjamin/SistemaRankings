@@ -97,6 +97,25 @@ const ViewNotaCliente = () => {
 const pushModalMessage = (message) => {
     let modalOverLay = document.getElementById("overLayMessage")
     if(message?.status === 0) modalOverLay.classList.toggle("d-none");
+    if(message?.status === 3) (modalOverLay.classList.contains("d-none")) ? "" : modalOverLay.classList.add("d-none");
+    //Cleam Motorista Name if Exists
+    imputMotoristaNome.value = "";
+    //Remove Hidden Motorista ID & Por ID
+    let imputMotoristaNome_pai = imputMotoristaNome.parentElement;
+    (imputMotoristaNome_pai.dataset.hasOwnProperty("motoristaId")) ? delete imputMotoristaNome_pai.dataset.motoristaId : "";
+    (imputMotoristaNome_pai.dataset.hasOwnProperty("porId")) ? delete imputMotoristaNome_pai.dataset.porId : "";
+}
+
+//Push Data to Fields to View Infos
+const pushDataToFields = (dados) => {
+    //If var 'dados' is undefined
+    if(dados === undefined) pushModalMessage(dados = {status: 0, text: "Erro ao identificar Dados Retornados"})
+    //Add Motorista to Field "Nome do Motorista"
+    imputMotoristaNome.value = dados.motorista[1]
+    //Create Hidden Motorista ID & Por ID
+    let imputMotoristaNome_pai = imputMotoristaNome.parentElement;
+    imputMotoristaNome_pai.dataset.motoristaId = dados.motorista[0]
+    imputMotoristaNome_pai.dataset.porId = dados.por[0]
 }
 
 //To Rankings
@@ -107,7 +126,7 @@ const toRanking = async () => {
     var query = new GetRequest(dados, "POST");
     var execute = await query.init()
     //Execute In Status (1) => Sucesso!
-    if(execute?.status === 1) imputMotoristaNome.value = execute.dados.motorista[1]
+    if(execute?.status === 1) pushDataToFields(execute?.dados)
     //Execute In Status (0) => ERROS
     if(execute?.status === 0) pushModalMessage(execute)
     //Execute In Status (3) => NULOS
